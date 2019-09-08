@@ -9,13 +9,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './header/header.component';
 import { TarjetasComponent } from './tarjetas/tarjetas.component';
 import { RegistroFisicaComponent } from './registro-fisica/registro-fisica.component';
+import { RegistraPersonaMoralComponent } from './registra-persona-moral/registra-persona-moral.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     TarjetasComponent,
-    RegistroFisicaComponent
+    RegistroFisicaComponent,
+    RegistraPersonaMoralComponent
   ],
   imports: [
     BrowserModule,

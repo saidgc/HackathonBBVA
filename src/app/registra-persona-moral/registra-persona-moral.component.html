@@ -1,0 +1,43 @@
+<form class="row justify-content-center">
+  <div class="col-12 col-lg-9">
+    <div class="card shadow p-3 mt-3">
+      <h2 class="text-primary">Persona moral</h2>
+      <div class="form-group row mt-3">
+        <label for="nombre" class="col-4 col-md-3 col-lg-3">Nombre (Razón social)</label>
+        <div class="col-8 col-md-9 col-lg-9">
+          <input type="text" class="form-control" name="nombre" id="nombre">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="rfc" class="col-3 col-form-label">RFC</label>
+        <div class="col-9">
+          <input type="text" class="form-control" name="rfc" id="rfc"
+          (input)="changeRfc($event)">
+          <pre id="resultado"></pre>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="correo" class="col-3 col-form-label">Correo</label>
+        <div class="col-9">
+          <input type="email" class="form-control" name="correo" id="correo" required>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="password" class="col-4 col-lg-3 col-form-label">Contraseña</label>
+        <div class="col-8 col-lg-9">
+          <input type="password" class="form-control" name="password" id ="password" required>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="passwordConfirmation" class="col-4 col-lg-3 col-form-label">Confirmar contraseña</label>
+        <div class="col-8 col-lg-9">
+          <input type="password" class="form-control" name="passwordConfirmation" id ="passwordConfirmation" required>
+        </div>
+      </div>
+      <div class="d-flex justify-content-end">
+        <button type="button" class="btn btn-primary"
+                (click)="print()">Registrar</button>
+      </div>
+    </div>
+  </div>
+</form>
