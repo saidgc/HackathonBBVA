@@ -6,6 +6,9 @@ import { HeaderComponent } from './header/header.component';
 import { TarjetasComponent } from './tarjetas/tarjetas.component';
 import { RegistraPersonaMoralComponent } from './registra-persona-moral/registra-persona-moral.component';
 import { RegistroFisicaComponent } from './registro-fisica/registro-fisica.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { RegistroNoConvencionalesComponent } from './registro-no-convencionales/registro-no-convencionales.component';
+
 
 
 const routes: Routes = [
@@ -13,6 +16,9 @@ const routes: Routes = [
   { path: 'home', component: TarjetasComponent },
   { path: 'registraMoral', component: RegistraPersonaMoralComponent },
   { path: 'registraFisica', component: RegistroFisicaComponent },
+  
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'registronoc', component: RegistroNoConvencionalesComponent }
 ];
 
 @NgModule({

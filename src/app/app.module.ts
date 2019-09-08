@@ -11,6 +11,7 @@ import { TarjetasComponent } from './tarjetas/tarjetas.component';
 import { RegistroFisicaComponent } from './registro-fisica/registro-fisica.component';
 import { RegistraPersonaMoralComponent } from './registra-persona-moral/registra-persona-moral.component';
 import { RegistroNoConvencionalesComponent} from './registro-no-convencionales/registro-no-convencionales.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { RegistroNoConvencionalesComponent} from './registro-no-convencionales/r
     TarjetasComponent,
     RegistroFisicaComponent,
     RegistraPersonaMoralComponent,
-    RegistroNoConvencionalesComponent
+    RegistroNoConvencionalesComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
