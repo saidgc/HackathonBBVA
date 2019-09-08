@@ -10,6 +10,7 @@ import { HeaderComponent } from './header/header.component';
 import { TarjetasComponent } from './tarjetas/tarjetas.component';
 import { RegistroFisicaComponent } from './registro-fisica/registro-fisica.component';
 import { RegistraPersonaMoralComponent } from './registra-persona-moral/registra-persona-moral.component';
+import { RegistroNoConvencionalesComponent} from './registro-no-convencionales/registro-no-convencionales.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { RegistraPersonaMoralComponent } from './registra-persona-moral/reg
     HeaderComponent,
     TarjetasComponent,
     RegistroFisicaComponent,
-    RegistraPersonaMoralComponent
+    RegistraPersonaMoralComponent,
+    RegistroNoConvencionalesComponent
   ],
   imports: [
     BrowserModule,
