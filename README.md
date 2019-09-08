@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 Hello world
 =======
 # Mipyme
@@ -29,3 +30,6 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 >>>>>>> oliver
+=======
+Hola Mundo
+>>>>>>> 73dda2b4f8cda8e8ce562f384f37ea5eb2761b48
