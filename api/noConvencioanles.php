@@ -21,7 +21,7 @@
        - 600	Datos faltantes
     */
 
-    $myfile = fopen("moral.csv", "r+") or die("No se pudo abrir el archivo!");
+    $myfile = fopen("noconvencionales.csv", "r+") or die("No se pudo abrir el archivo!");
     while(!feof($myfile)) {
         $data = fgets($myfile);
         if($data != ""){
@@ -109,7 +109,7 @@
             }
 
             $PFAE = $direccion . "," . $sertificaciones . "," . $economiaZona . "," . $noClientes . "," . $noClientesEsperados . "," . $costoAdquisicionClientes . "," . $landinfPage . "," . $domainAge . "," . $BBVA ;
-            fwrite($PFAE); 
+            fwrite($myfile,$PFAE); 
             $json[status] 	= 200;
             $json[msg]		= "PFAE registrada correctamente";
             echo json_encode($json);
