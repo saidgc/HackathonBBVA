@@ -1,18 +1,37 @@
 
+from sklearn.preprocessing import StandardScaler
+from sklearn.neural_network import MLPClassifier
+from sklearn.metrics import confusion_matrix
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import train_test_split
 import numpy as np
 import pandas as pd
-from sklearn.model_selection import train_test_split
+import time
+from flask import Flask, jsonify, request
+app = Flask(__name__)
 
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import confusion_matrix, classification_report
-from sklearn.neural_network import MLPClassifier
-from sklearn.preprocessing import StandardScaler
 
+mlp = None
+scaler = None
+
+tags = ["Not authorized", "Authorized"]
 
 def evaluate_clasifier(data_classifier, test_data, test_labels):
     prediction = data_classifier.predict(test_data)
     CM = confusion_matrix(test_labels, prediction)
     return CM
+
+
+@app.route('/<saldo>')
+def predecir(saldo):
+    global mlp, scaler
+    print(type(saldo))
+    testeo = scaler.transform(
+        [[2, 11000, 6131969, 4, 1, 1, 1311984, -1, -1, -1, 0, 0.0, 0, 0, 1, 0, 0, 0, float(saldo), 0, 0, 0, 0]])[0]
+
+    print(mlp.predict([testeo]))
+
+    return tags[(int(str(mlp.predict([testeo])).replace(']','').replace('[','')))]
 
 
 if __name__ == "__main__":
@@ -34,11 +53,9 @@ if __name__ == "__main__":
     predictions = mlp.predict(train_data)
 
     confusionmatrix = evaluate_clasifier(mlp, test_data, np.array(test_labels))
-
-    testeo = scaler.transform([[2,11000,6131969,4,1,1,1311984,-1,-1,-1,0,0.0,0,0,1,0,0,0,40546.54,0,0,0,0]])[0]
-
-    print(mlp.predict([testeo]))
-
     score = confusionmatrix.diagonal().sum() * 100. / confusionmatrix.sum()
-    print(score)
 
+    print("Accuracy", score)
+
+    app.run()
+        # En esta seccion hay que esperar a que manden datos para evaluar

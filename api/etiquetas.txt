@@ -35,3 +35,13 @@ PFAEs       4
 Cabeceras 
 
 People type,Zip code,Birthdate,Comercial Activity,Micronegocio,Sales rank,Bank antique,Card Sales,Credit offers,,TDCN,Available on card,Bcom,Bneg,Email,Credits granted,Arrears Pyme,Arrears credit card pyme,Balance,Expenses 100k,Expenses 300k,Expenses 600k,Expenses 1M
+
+
+MESDIAAÑO
+
+peopleType:
+    -?           -1
+    -Gobierno    1
+    -Morales     2
+    -Físicas     3
+    -PFAEs       4
