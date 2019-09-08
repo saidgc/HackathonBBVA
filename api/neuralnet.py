@@ -1,53 +1,44 @@
 
 import numpy as np
+import pandas as pd
+from sklearn.model_selection import train_test_split
+
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import confusion_matrix, classification_report
+from sklearn.neural_network import MLPClassifier
+from sklearn.preprocessing import StandardScaler
 
 
-class NeuralNetwork():
-
-    def __init__(self):
-        np.random.seed(1)
-        self.synaptic_weights = 2 * np.random.random((4, 1)) - 1
-
-    def sigmoid(self, x):
-        return 1 / (1 + np.exp(-x))
-
-    def sigmoid_derivative(self, x):
-        return x * (1 - x)
-
-    def train(self, training_inputs, training_outputs, training_iterations):
-        for iteration in range(training_iterations):
-            output = self.think(training_inputs)
-            error = training_outputs - output
-            adjustments = np.dot(training_inputs.T, error *
-                                 self.sigmoid_derivative(output))
-
-            self.synaptic_weights += adjustments
-
-    def think(self, inputs):
-        inputs = inputs.astype(float)
-        output = self.sigmoid(np.dot(inputs, self.synaptic_weights))
-        return output
+def evaluate_clasifier(data_classifier, test_data, test_labels):
+    prediction = data_classifier.predict(test_data)
+    CM = confusion_matrix(test_labels, prediction)
+    return CM
 
 
 if __name__ == "__main__":
-    neural_network = NeuralNetwork()
-    print(neural_network.synaptic_weights)
+    scaler = StandardScaler()
+    X = pd.read_csv('dataset.csv')
+    y = pd.read_csv('tags.csv')
 
-    training_inputs = np.array([[0, 0, 0, 1],
-                                [0, 0, 1, 1],
-                                [0, 1, 1, 1],
-                                [1, 1, 1, 1]])
+    train_data, test_data, train_labels, test_labels = train_test_split(
+        X, y, test_size=0.3, random_state=42)
 
-    training_outputs = np.array([[0.06, 0.2, 0.46, 1]]).T
+    scaler.fit(train_data)
 
-    neural_network.train(training_inputs, training_outputs, 150000)
+    train_data = scaler.transform(train_data)
+    test_data = scaler.transform(test_data)
 
-    while True:
-        user_input_one = str(input("Predicion val1: "))
-        user_input_two = str(input("Predicion val2: "))
-        user_input_three = str(input("Predicion val3: "))
-        user_input_four = str(input("Predicion val4: "))
+    mlp = MLPClassifier(hidden_layer_sizes=(30, 30, 30))
+    mlp.fit(train_data, train_labels.values.ravel())
 
-        print("Prediccion: ")
-        print(neural_network.think(
-            np.array([user_input_one, user_input_two, user_input_three, user_input_three])))
+    predictions = mlp.predict(train_data)
+
+    confusionmatrix = evaluate_clasifier(mlp, test_data, np.array(test_labels))
+
+    testeo = scaler.transform([[2,11000,6131969,4,1,1,1311984,-1,-1,-1,0,0.0,0,0,1,0,0,0,40546.54,0,0,0,0]])[0]
+
+    print(mlp.predict([testeo]))
+
+    score = confusionmatrix.diagonal().sum() * 100. / confusionmatrix.sum()
+    print(score)
+
