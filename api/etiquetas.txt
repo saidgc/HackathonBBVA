@@ -13,4 +13,25 @@ PFAEs       4
 "MICRONEGOCIO BAJO","MICRONEGOCIO"
 
 
-"A. Menor a 01M","B. 01M-02M","C. 02M-03M","D. 03M-04M","E. 04M-05M","F. 05M-06M","G. 06M-08M","H. 08M-10M","I. 10M-12M","J. 12M-15M","K. 15M-16M","L. 16M-18M","M. 18M-20M","N. 20M-30M","O. 30M-40M","P. 40M-50M","Q. +50M"
+"A. Menor a 01M",
+"B. 01M-02M",
+"C. 02M-03M",
+"D. 03M-04M",
+"E. 04M-05M",
+"F. 05M-06M",
+"G. 06M-08M",
+"H. 08M-10M",
+"I. 10M-12M",
+"J. 12M-15M",
+"K. 15M-16M",
+"L. 16M-18M",
+"M. 18M-20M",
+"N. 20M-30M",
+"O. 30M-40M",
+"P. 40M-50M",
+"Q. +50M"
+
+
+Cabeceras 
+
+People type,Zip code,Birthdate,Comercial Activity,Micronegocio,Sales rank,Bank antique,Card Sales,Credit offers,,TDCN,Available on card,Bcom,Bneg,Email,Credits granted,Arrears Pyme,Arrears credit card pyme,Balance,Expenses 100k,Expenses 300k,Expenses 600k,Expenses 1M

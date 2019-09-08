@@ -6,7 +6,7 @@ class NeuralNetwork():
 
     def __init__(self):
         np.random.seed(1)
-        self.synaptic_weights = 2 * np.random.random((3, 1)) - 1
+        self.synaptic_weights = 2 * np.random.random((4, 1)) - 1
 
     def sigmoid(self, x):
         return 1 / (1 + np.exp(-x))
@@ -33,19 +33,21 @@ if __name__ == "__main__":
     neural_network = NeuralNetwork()
     print(neural_network.synaptic_weights)
 
-    training_inputs = np.array([[0, 0, 1],
-                                [1, 1, 1],
-                                [1, 0, 1],
-                                [0, 1, 1]])
+    training_inputs = np.array([[0, 0, 0, 1],
+                                [0, 0, 1, 1],
+                                [0, 1, 1, 1],
+                                [1, 1, 1, 1]])
 
-    training_outputs = np.array([[0, 1, 1, 0]]).T
+    training_outputs = np.array([[0.06, 0.2, 0.46, 1]]).T
 
-    neural_network.train(training_inputs, training_outputs, 15000)
+    neural_network.train(training_inputs, training_outputs, 150000)
 
-    user_input_one = str(input("Predicion val1: "))
-    user_input_two = str(input("Predicion val2: "))
-    user_input_three = str(input("Predicion val3: "))
+    while True:
+        user_input_one = str(input("Predicion val1: "))
+        user_input_two = str(input("Predicion val2: "))
+        user_input_three = str(input("Predicion val3: "))
+        user_input_four = str(input("Predicion val4: "))
 
-    print("Prediccion: ")
-    print(neural_network.think(
-        np.array([user_input_one, user_input_two, user_input_three])))
+        print("Prediccion: ")
+        print(neural_network.think(
+            np.array([user_input_one, user_input_two, user_input_three, user_input_three])))
