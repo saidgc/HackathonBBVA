@@ -1,0 +1,58 @@
+<!-- Barra de navegacion -->
+<nav class="navbar navbar-expand-lg  flotante" style="background-color: #072146" >
+    <!-- logo -->
+    <a class="navbar-brand" href="#">
+      <img src="assets/img/logo.PNG"  alt="#" width="120px" height="40px">
+    </a>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <button class="button" style='text-decoration:none;'>PERSONAS</button>
+          <button class="button" >EMPRESAS Y GOBIERNO</button>
+        </ul>
+
+        <ul class="navbar-nav" >
+          <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#logInModal" style="font-size: 14pt">
+            INICIAR SESIÓN
+          </button>
+
+          <div class="modal fade" id="logInModal"tabindex="-1" role="dialog" >
+            <div class="modal-dialog" role="document" >
+
+              <div class="modal-content" >
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Bienvenido</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body" style="padding:40px 50px;">
+                  <form role="form">
+                    <div class="form-group">
+                      <label for="usrname"><span class="glyphicon glyphicon-user"></span>RFC:</label>
+                      <input type="text" class="form-control" id="usrname" placeholder="Ingrese su RFC">
+                    </div>
+                    <div class="form-group">
+                      <label for="psw"><span class="glyphicon glyphicon-eye-open"></span>Contraseña:</label>
+                      <input type="text" class="form-control" id="psw" placeholder="Ingrese su contraseña">
+                    </div>
+                    <button type="submit" class="btn btn-success btn-block" ><span class="glyphicon glyphicon-off"></span><a href="dashboard"> INGRESAR</a></button>
+                  </form>
+                </div>
+
+                <div style="text-align: center">
+                  <h5>Registrate!</h5>
+                  <a href="registraMoral" class="mr-5">Como persona moral</a>
+                  <a href="registraFisica">Como persona física</a>
+                </div>
+              </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+          </div><!-- /.modal !-->
+
+        </ul>
+      </div>
+  </nav>
+
+  <router-outlet></router-outlet>

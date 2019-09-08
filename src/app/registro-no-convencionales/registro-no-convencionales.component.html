@@ -1,0 +1,165 @@
+
+
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4" align=center>Variables No Convencionales</h1>
+    <p class="lead" align=center>Unete a nosotros, mejora tus finanzas y haz crecer tu empresa</p>
+  </div>
+</div>
+
+<div class="container">
+  
+  <div class="panel-group">
+    <form>
+    
+      <!-- P A N E L    I N F O R M A C I O N    E M P R E S A -->
+      <div class="panel panel-default" style="margin-bottom: 2%">
+        <div class="panel-heading" style="font-size:14pt">Informacion de la Empresa</div>
+        <div class="panel-body">
+
+            <div class="form-group">
+                <label for="address" style="font-size:12pt">Direccion: </label>
+                <input type="text" class="form-control" id="address" placeholder="">
+            </div>
+
+            <div class="form-group">
+              <label for="certifications" style="font-size:12pt">Certificaciones financieras: </label>
+              
+              <br>
+              
+              <input id="cinCert" type="text" (input)="certificacion = $event.target.value">
+              <button type="button" class="btn btn-primary" (click)="agrega()" style="margin-left: 10pt">Agregar</button>
+              
+              <br>
+              <span type="badge badge-secondary" *ngFor="let item of certificaciones; index as i;">
+                {{item}} <button class="btn btn-secondary" (click)="elimina(i)" >&times;</button>
+              </span>
+
+
+            </div>
+
+            <div class="form-group">
+              <label for="economicActivity" style="font-size:12pt">Actividad economica de la zona: </label>
+              <select class="form-control" id="economicActivity">
+                <option selected>Industrial</option>
+                <option>Comercial</option>
+                <option>Agricola</option>
+                <option>Empresarial/Corporativa</option>
+                <option>Residencial</option>
+                
+              </select>
+            </div>
+        
+        </div>
+      </div>
+      
+      <!-- P A N E L    I N F O R M A C I O N    C L I E N T E S -->
+      <div class="panel panel-default" style="margin-bottom: 2%">
+        <div class="panel-heading" style="font-size:14pt">Clientes</div>
+        <div class="panel-body">
+          
+          <div class="form-group">
+            <label for="numCustomers" style="font-size:12pt">Numero de clientes: </label>
+            <input type="text" class="form-control" id="numCustomers" placeholder="">
+          </div>
+
+          <div class="form-group">
+            <label for="expectNumCustomers" style="font-size:12pt">Numero de clientes esperados en lapso de un anio: </label>
+            <input type="text" class="form-control" id="expectNumCustomers" placeholder="">
+          </div>
+
+          <div class="form-group">
+            <label for="costoAdqCustomers" style="font-size:12pt">Costo de adquisicion de clientes: </label>
+            <input type="text" class="form-control" id="costoAdqCustomers" placeholder="">
+          </div>
+
+        </div>
+      </div>
+      
+      <!-- P A N E L    I M P A C T O    S O C I A L -->
+      <div class="panel panel-default" style="margin-bottom: 2%">
+        <div class="panel-heading" style="font-size:14pt">Impacto Social</div>
+        <div class="panel-body">
+
+          
+
+          <div class="form-group">
+              <label for="landingPage" style="font-size:12pt">Dominio: </label>
+              <input type="text" class="form-control" id="landingPage" placeholder="">
+          </div>
+
+          <div class="form-group">
+            <label for="timeDomain" style="font-size:12pt">Tiempo de adquisicion del dominio: </label>
+            <select class="form-control" id="timeDomain">
+              <option selected>Ninguno</option>
+              <option>Menos de 6 meses</option>
+              <option>Mas de 6 meses</option>
+              <option>Mas de un anio</option>
+              <option>Mas de dos anios</option>
+              <option>Mas de 5 anios</option>
+            </select>
+          </div>
+
+          <div class="input-group">
+            <label for="landingPage" style="font-size:12pt">Red social (Facebook): </label>
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="ulrFace" style="font-size: 10pt">https://www.facebook.com/</span>
+            </div>
+            <input type="text" class="form-control" id="urlFace" aria-describedby="urlFace">
+          </div>
+          
+
+        </div>
+      </div>
+
+      <!-- P A N E L    R E L A C I O N    B A N C O -->
+      <div class="panel panel-default" style="margin-bottom: 2%">
+        <div class="panel-heading" style="font-size:14pt">Relacion con el banco</div>
+        <div class="panel-body">
+          
+          <label style="font-style: none">Tiene alguna relacion con un socio de Bancomer? </label>
+          <div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" checked>
+                <label class="form-check-label" for="inlineRadio1">No</label>
+            </div>
+            
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">Si</label>
+            </div>
+          </div>
+
+          <br>
+          
+          <div class="form-group">
+            <label for="timeDomain" style="font-size:12pt">RFC del Socio: </label>
+            <div class="form-group">
+                <label for="partnersS" style="font-size:12pt">Socios: </label>
+                
+                <br>
+                
+                <input id="cinCert" type="text" (input)="partner = $event.target.value">
+                <button type="button" class="btn btn-primary" (click)="agregaP()" style="margin-left: 10pt">Agregar</button>
+                
+                <br>
+                <span type="badge badge-secondary" *ngFor="let item of partners; index as i;">
+                  {{item}} <button class="btn btn-secondary" (click)="eliminaP(i)" >&times;</button>
+                </span>
+  
+  
+              </div>
+
+
+          </div>
+
+          
+
+        </div>
+      </div>
+    
+    </form>
+  </div>
+
+</div>

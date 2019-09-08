@@ -1,0 +1,107 @@
+<!--<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4" align=center>Persona Física</h1>
+    <p class="lead" align=center>Únete a nosotros, mejora tus finanzas y haz crecer tu empresa</p>
+
+  </div>
+</div>
+
+<div class="container-fluid" style="width: 45rem;">
+  <div class="card-body">
+    <form>
+      <div class="form-group" align=center>
+        <label for="inputRFC">RFC</label>
+        <input type="text" class="form-control" id="RFC" placeholder="Introduce tu RFC" align=center>
+        <small id="emailHelp" class="form-text text-muted">Comprobaremos la veracidad de tu RFC</small>
+      </div>
+      
+      <div class="form-group" align=center>
+        <label for="inputNombre">Nombre</label>
+        <input type="text" class="form-control" id="Nombre" placeholder="Introduce tu Nombre" align=center>
+
+        <label for="inputApellidos">Apellidos</label>
+        <input type="text" class="form-control" id="Apellidos" placeholder="Introduce tus Apellidos" align=center>
+      </div>
+
+      <div class="form-group" align=center>
+        <label for="exampleInputEmail1">Correo electrónico</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+          placeholder="Introduce tu correo electrónico">
+      </div>
+
+      <div class="form-group" align=center>
+        <label for="exampleInputPassword1">Contraseña</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+      </div>
+
+      <div align=center>
+        <button type="submit" class="btn btn-primary">Registrarme</button>
+      </div>
+    </form>
+
+
+  </div>
+</div>
+-->
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4" align=center>Persona Física con Actividad Empresarial</h1>
+    <p class="lead" align=center>Únete a nosotros, mejora tus finanzas y haz crecer tu empresa</p>
+  </div>
+</div>
+
+<form class="row justify-content-center">
+  <div class="col-12 col-lg-9">
+    <div class="p-3">
+
+      <div class="form-group row">
+        <label for="rfc" class="col-3 col-form-label">RFC</label>
+        <div class="col-9">
+          <input type="text" class="form-control" name="rfc" id="rfc" (input)="changeRfc($event)">
+          <pre id="resultado"></pre>
+        </div>
+      </div>
+
+
+      <div class="form-group row">
+        <label for="nombre" class="col-4 col-md-3 col-lg-3">Nombre </label>
+        <div class="col-8 col-md-9 col-lg-9">
+          <input type="text" class="form-control" name="nombre" id="nombre">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="nombre" class="col-4 col-md-3 col-lg-3">Apellidos </label>
+        <div class="col-8 col-md-9 col-lg-9">
+          <input type="text" class="form-control" name="nombre" id="nombre">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="correo" class="col-3 col-form-label">Correo</label>
+        <div class="col-9">
+          <input type="email" class="form-control" name="correo" id="correo" required>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="password" class="col-4 col-lg-3 col-form-label">Contraseña</label>
+        <div class="col-8 col-lg-9">
+          <input type="password" class="form-control" name="password" id="password" required>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="passwordConfirmation" class="col-4 col-lg-3 col-form-label">Confirmar contraseña</label>
+        <div class="col-8 col-lg-9">
+          <input type="password" class="form-control" name="passwordConfirmation" id="passwordConfirmation" required>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-end">
+        <button type="button" class="btn btn-primary" (click)="print()">Registrarme</button>
+      </div>
+
+    </div>
+  </div>
+</form>
