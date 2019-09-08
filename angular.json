@@ -82,7 +82,7 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [],
+            "scripts": ["../node_modules/chart.js/dist/Chart.min.js"],
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -132,5 +132,14 @@
       }
     }
   },
-  "defaultProject": "mipyme"
+  "defaultProject": "mipyme",
+  "schematics": {
+    "@schematics/angular:component": {
+      "prefix": "app",
+      "styleext": "scss"
+    },
+    "@schematics/angular:directive": {
+      "prefix": "app"
+    }
+  }
 }
