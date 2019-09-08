@@ -57,5 +57,5 @@ if __name__ == "__main__":
 
     print("Accuracy", score)
 
-    app.run()
-        # En esta seccion hay que esperar a que manden datos para evaluar
+    app.run(host= '0.0.0.0')        
+    # En esta seccion hay que esperar a que manden datos para evaluar
