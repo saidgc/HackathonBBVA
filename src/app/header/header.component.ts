@@ -13,17 +13,9 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
   }
 
-  display='none';
-
-  openModal(){
-    this.display='block';
+  onRegister() {
+    console.log('hola');
   }
-
-  onCloseHandled() {
-    this.display='none';
-  }
-
-  
 
 
 }

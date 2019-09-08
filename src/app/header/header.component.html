@@ -4,84 +4,54 @@
     <a class="navbar-brand" href="#">
       <img src="assets/img/logo.PNG"  alt="#" width="120px" height="40px">
     </a>
-    
-          <!--
-            <button class="nav-item" [ngStyle]="{'background-color': ''  }" (click)="autenticacion()" style="color: WHITE;"> PERSONAS </button>
-          
-            <button class="nav-item" [ngStyle]="{'background-color': ''  }" (click)="autenticacion()" style="color: WHITE;"> EMPRESAS Y GOBIERNO </button>
-          -->
-      
-     
 
     <div class="collapse navbar-collapse" id="navbarNav">
-      
+
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-
-          <button class="button" style='text-decoration:none;'>
-            PERSONAS 
-          </button>
-
-
-          <button class="button" > 
-            EMPRESAS Y GOBIERNO
-          </button>
-
+          <button class="button" style='text-decoration:none;'>PERSONAS</button>
+          <button class="button" >EMPRESAS Y GOBIERNO</button>
         </ul>
-      
+
         <ul class="navbar-nav" >
-          <button type="button" class="btn btn-info btn-lg" (click)="openModal()" style="font-size: 14pt">INICIAR SESION</button>
-          <div class="backdrop" [ngStyle]="{'display':display}"></div>
+          <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#logInModal" style="font-size: 14pt">
+            INICIAR SESIÓN
+          </button>
 
-          <div class="modal" tabindex="-1" role="dialog"  [ngStyle]="{'display':display}">
-
+          <div class="modal fade" id="logInModal"tabindex="-1" role="dialog" >
             <div class="modal-dialog" role="document" >
 
               <div class="modal-content" >
-
-                <div style="text-align: left">
-                  <div class="modal-header" style="padding:35px 30px; ">
-                      <button type="button" class="close" aria-label="Close" (click)="onCloseHandled()" style="margin-left: 10px"><span aria-hidden="true">&times;</span></button>
-                      <h4><span class="glyphicon glyphicon-lock" ></span> Bienvenido!</h4>
-                  </div>
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Bienvenido</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
 
-                  <div class="modal-body" style="padding:40px 50px;">
-                    <form role="form">
-                      
-                      <div class="form-group">
-                        <label for="usrname"><span class="glyphicon glyphicon-user"></span>RFC:</label>
-                        <input type="text" class="form-control" id="usrname" placeholder="Ingrese su RFC">
-                      </div>
-                      
-                      <div class="form-group">
-                        <label for="psw"><span class="glyphicon glyphicon-eye-open"></span>Contrasenia:</label>
-                        <input type="text" class="form-control" id="psw" placeholder="Ingrese su contrasenia">
-                      </div>
-                      <!--
-                      <div class="checkbox">
-                        <label><input type="checkbox" value="" checked>Remember me</label>
-                      </div>
-                      -->
-                        <button type="submit" class="btn btn-success btn-block" ><span class="glyphicon glyphicon-off"></span>INGRESAR</button>
-                    </form>
-                  </div>
-                  <div class="modal-footer" style="text-align: center">
-                    <p><a href="#">Registrate!</a></p><hr>
-                    <!--
-                    <p>Olvidaste tu <a href="#">Contrasenia?</a></p>
-                    -->
-                  </div>
-                
+                <div class="modal-body" style="padding:40px 50px;">
+                  <form role="form">
+                    <div class="form-group">
+                      <label for="usrname"><span class="glyphicon glyphicon-user"></span>RFC:</label>
+                      <input type="text" class="form-control" id="usrname" placeholder="Ingrese su RFC">
+                    </div>
+                    <div class="form-group">
+                      <label for="psw"><span class="glyphicon glyphicon-eye-open"></span>Contraseña:</label>
+                      <input type="text" class="form-control" id="psw" placeholder="Ingrese su contraseña">
+                    </div>
+                    <button type="submit" class="btn btn-success btn-block" ><span class="glyphicon glyphicon-off"></span>INGRESAR</button>
+                  </form>
+                </div>
 
+                <div style="text-align: center">
+                  <h5>Registrate!</h5>
+                  <a href="registraMoral" class="mr-5">Como persona moral</a>
+                  <a href="registraFisica">Como persona física</a>
+                </div>
               </div><!-- /.modal-content -->
-
             </div><!-- /.modal-dialog -->
-
           </div><!-- /.modal !-->
 
         </ul>
-
-  
       </div>
   </nav>
 
